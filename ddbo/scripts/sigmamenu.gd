@@ -7,6 +7,9 @@ enum sigma{
 }
 var choosen_var = sigma.enter
 
+func _ready():
+	get_viewport().size = Vector2(720, 686)
+
 func _input(event):
 	if event.is_action_pressed("ui_up"):
 		choosen_var -= 1
@@ -36,11 +39,11 @@ func _process(delta):
 			#loadedscript.currentlevel = loadedscript.levels.grass
 			#visible = false
 			#get_tree().change_scene_to_file("res://scenes/mainscene.tscn")
-			$AnimatedSprite2D.play("shovel")
+			$CenterContainer/AspectRatioContainer/AnimatedSprite2D.play("shovel")
 		sigma.config:
-			$AnimatedSprite2D.play("sigmamode")
+			$CenterContainer/AspectRatioContainer/AnimatedSprite2D.play("sigmamode")
 			#visible = false
 			#get_tree().change_scene_to_file("res://scenes/UI/menu.tscn")
 		sigma.exit:
-			$AnimatedSprite2D.play("yeah")
+			$CenterContainer/AspectRatioContainer/AnimatedSprite2D.play("yeah")
 	pass

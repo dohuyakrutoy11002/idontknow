@@ -14,12 +14,17 @@ config/name="ddbo"
 config/version="beta"
 run/main_scene="res://scenes/UI/sigmamenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 loadedscript="*res://scripts/loadedscripts.gd"
+
+[display]
+
+window/size/resizable=false
 
 [editor_plugins]
 

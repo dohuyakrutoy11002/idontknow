@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bfw55kyk3d48c"]
+
+[node name="CenterContainer" type="CenterContainer"]
+offset_right = 654.0
+offset_bottom = 645.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 2

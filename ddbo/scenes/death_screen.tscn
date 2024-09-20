@@ -1,5 +1,6 @@
-[gd_scene load_steps=90 format=3 uid="uid://bs2kl3c1uy75t"]
+[gd_scene load_steps=91 format=3 uid="uid://bs2kl3c1uy75t"]
 
+[ext_resource type="Script" path="res://scripts/ogogogogogogo.gd" id="1_1bibq"]
 [ext_resource type="Script" path="res://scripts/scoredisplay.gd" id="1_66kp7"]
 [ext_resource type="Texture2D" uid="uid://m5fv5fv45e7c" path="res://assets/death/IMG_2505_page_0001.png" id="1_myp0b"]
 [ext_resource type="Texture2D" uid="uid://tu8gmpybom4j" path="res://assets/death/IMG_2505_page_0002.png" id="2_y6d3b"]
@@ -362,18 +363,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1bibq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(1.80534, 1.23954)
+position = Vector2(359.386, 342.5)
+scale = Vector2(1.13308, 1.30228)
 sprite_frames = SubResource("SpriteFrames_f82cq")
+frame_progress = 0.953468
+speed_scale = 2.0
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 819.0
-offset_top = 278.0
-offset_right = 936.0
-offset_bottom = 318.0
-text = "1000-7"
+offset_left = 529.0
+offset_top = 298.0
+offset_right = 646.0
+offset_bottom = 338.0
+text = "0"
 label_settings = SubResource("LabelSettings_fcitq")
 script = ExtResource("1_66kp7")

@@ -131,5 +131,4 @@ offset_bottom = 44.0
 [node name="tylerdurden" type="AnimatedSprite2D" parent="."]
 position = Vector2(120, 602)
 sprite_frames = SubResource("SpriteFrames_cv506")
-animation = &"first"
-frame_progress = 0.0775785
+animation = &"thrid"

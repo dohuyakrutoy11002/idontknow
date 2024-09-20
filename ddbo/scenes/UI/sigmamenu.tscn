@@ -44,28 +44,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v6qvp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(577.465, 324.5)
-scale = Vector2(0.959225, 0.567308)
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 723.0
+offset_bottom = 684.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer/AspectRatioContainer"]
+position = Vector2(-1, 3)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_1dbw5")
 animation = &"shovel"
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Area2D" type="Area2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D/Area2D"]
 position = Vector2(22.3605, 29.0848)
 shape = SubResource("RectangleShape2D_bm4io")
 
-[node name="Area2D2" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Area2D2" type="Area2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D"]
 position = Vector2(0, 141.898)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D/Area2D2"]
 position = Vector2(22.3605, 29.0848)
 shape = SubResource("RectangleShape2D_bm4io")
 
-[node name="Area2D3" type="Area2D" parent="AnimatedSprite2D"]
+[node name="Area2D3" type="Area2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D"]
 position = Vector2(0, 281.153)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D/Area2D3"]
 position = Vector2(22.3605, 29.0848)
 shape = SubResource("RectangleShape2D_bm4io")
