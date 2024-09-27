@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_m6gps"]
 [ext_resource type="Texture2D" uid="uid://dwcxn0xqebbl2" path="res://assets/enemies/plant1/Kino_page_0002.png" id="3_buqb0"]
 [ext_resource type="Texture2D" uid="uid://dbambg4ehv0ji" path="res://assets/enemies/plant1/Kino_page_0003.png" id="4_3th5p"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="4_q22wl"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_s78k4"]
 [ext_resource type="Texture2D" uid="uid://b81tn3iranjen" path="res://assets/enemies/plant1/Kino_page_0004.png" id="5_4p8ya"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="5_ge470"]
@@ -71,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://ysg7u6utjxsg" path="res://assets/enemies/plant2/Crazy_page_0030.png" id="63_y3eeu"]
 [ext_resource type="Texture2D" uid="uid://5felgertqlmm" path="res://assets/enemies/plant2/Crazy_page_0031.png" id="64_s7ec3"]
 [ext_resource type="Texture2D" uid="uid://b0ttwu5jdp0lh" path="res://assets/enemies/plant2/Crazy_page_0032.png" id="65_ira27"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="71_1uxpq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jlo4x"]
 animations = [{
@@ -429,17 +429,6 @@ sprite_frames = SubResource("SpriteFrames_jlo4x")
 animation = &"plant2"
 frame_progress = 0.138524
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-script = ExtResource("4_q22wl")
-auto_pattern_id = "other"
-r_active_chances = 1.0
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
-r_start_distance_choice = ""
-r_start_distance_variation = Vector3(0, 0, 0)
-
 [node name="SpawnPattern" type="Path2D" parent="."]
 position = Vector2(-1.52588e-05, 0)
 scale = Vector2(4.00048, 5.33397)
@@ -452,6 +441,18 @@ curve = SubResource("Curve2D_0vj88")
 script = ExtResource("5_ge470")
 id = "a"
 props = SubResource("PackedDataContainer_ky0ho")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+script = ExtResource("71_1uxpq")
+auto_pattern_id = "other"
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 

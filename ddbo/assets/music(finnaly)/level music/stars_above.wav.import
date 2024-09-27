@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjqehxpw2mq00"
+path="res://.godot/imported/stars_above.wav-b9213f36a90325f0011f8284226a53ac.sample"
+
+[deps]
+
+source_file="res://assets/music(finnaly)/level music/stars_above.wav"
+dest_files=["res://.godot/imported/stars_above.wav-b9213f36a90325f0011f8284226a53ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

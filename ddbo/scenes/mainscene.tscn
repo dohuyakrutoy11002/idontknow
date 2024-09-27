@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ct8k4bqajepy4"]
+[gd_scene load_steps=22 format=3 uid="uid://ct8k4bqajepy4"]
 
 [ext_resource type="PackedScene" uid="uid://dddm8t81ncm74" path="res://scenes/maincharacter.tscn" id="1_hs4hf"]
 [ext_resource type="Texture2D" uid="uid://bcpu1ag74cqw2" path="res://assets/background/place/IMG_1712_page_0001.jpg" id="1_ndbs6"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b8fhs0c61ujto" path="res://assets/background/snow/IMG_1838_page_0005.png" id="11_bv765"]
 [ext_resource type="Texture2D" uid="uid://c3kpyncwn3kgh" path="res://assets/background/snow/IMG_1838_page_0006.png" id="12_51l4a"]
 [ext_resource type="Texture2D" uid="uid://d3ewe78wo2s37" path="res://assets/background/snow/IMG_1838_page_0007.png" id="13_4wb0f"]
+[ext_resource type="Script" path="res://scripts/audiothingmainscene.gd" id="19_njxsa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7aeob"]
 animations = [{
@@ -130,6 +131,11 @@ shape = SubResource("RectangleShape2D_oat8l")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(789.74, 673)
 shape = SubResource("RectangleShape2D_oat8l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+playback_type = 1
+script = ExtResource("19_njxsa")
 
 [connection signal="timeout" from="spawntime" to="Camera2D" method="_on_spawntime_timeout"]
 [connection signal="timeout" from="doorspawn" to="Camera2D" method="_on_doorspawn_timeout"]

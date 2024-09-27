@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://crk7dyo410vku"]
+[gd_scene load_steps=10 format=3 uid="uid://crk7dyo410vku"]
 
 [ext_resource type="Texture2D" uid="uid://cd314yset0hxy" path="res://assets/background/nonlinear/grass/IMG_1860.png" id="1_hummp"]
 [ext_resource type="Script" path="res://scripts/nonlinearlevel.gd" id="1_xnr1d"]
 [ext_resource type="PackedScene" uid="uid://dddm8t81ncm74" path="res://scenes/maincharacter.tscn" id="2_o5pfs"]
+[ext_resource type="Shader" path="res://scripts/shaders/nonlinearlevel.gdshader" id="4_b4oox"]
 [ext_resource type="PackedScene" uid="uid://cgjbc07ljoga8" path="res://scenes/scrimbloids.tscn" id="4_xmpgx"]
+[ext_resource type="Shader" path="res://scripts/shaders/skibidi.gdshader" id="5_7ityp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qye4u"]
 animations = [{
@@ -15,6 +17,18 @@ animations = [{
 "name": &"grass",
 "speed": 5.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6s0f5"]
+shader = ExtResource("4_b4oox")
+shader_parameter/crt_curve = 0.02
+shader_parameter/crt_scan_line_color = 0.347
+shader_parameter/aperture_grille_rate = 0.6
+shader_parameter/aparture_grille_cut_rate = 0.4
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0akqi"]
+shader = ExtResource("5_7ityp")
 
 [node name="nonlinearlevel" type="Node2D"]
 script = ExtResource("1_xnr1d")
@@ -36,6 +50,19 @@ scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(0.75, 0.75)
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D/Camera2D"]
+material = SubResource("ShaderMaterial_6s0f5")
+offset_left = -257.0
+offset_top = -144.0
+offset_right = 90.0
+offset_bottom = 54.0
+
+[node name="ColorRect2" type="ColorRect" parent="CharacterBody2D/Camera2D/ColorRect"]
+material = SubResource("ShaderMaterial_0akqi")
+layout_mode = 0
+offset_right = 347.0
+offset_bottom = 198.0
 
 [node name="position1" type="Node2D" parent="CharacterBody2D"]
 position = Vector2(224, 21.6667)
