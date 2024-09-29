@@ -134,7 +134,6 @@ shape = SubResource("RectangleShape2D_oat8l")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
-playback_type = 1
 script = ExtResource("19_njxsa")
 
 [connection signal="timeout" from="spawntime" to="Camera2D" method="_on_spawntime_timeout"]

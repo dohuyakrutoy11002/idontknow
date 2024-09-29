@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://csdf3o85bq0el"]
 
 [ext_resource type="Script" path="res://scripts/sigmamenu.gd" id="1_v6qvp"]
-[ext_resource type="Texture2D" uid="uid://dgw46fhq6smwt" path="res://assets/menu/IMG_2094_page_0001.png" id="2_f16tm"]
-[ext_resource type="Texture2D" uid="uid://dld6m10pji02j" path="res://assets/menu/IMG_2094_page_0002.png" id="3_tfk0f"]
-[ext_resource type="Texture2D" uid="uid://b8kj7o5e1th35" path="res://assets/menu/IMG_2094_page_0003.png" id="4_8g8xn"]
+[ext_resource type="Texture2D" uid="uid://b1x8u0jsdywco" path="res://assets/title screen frames/1.PNG" id="2_3w3yr"]
+[ext_resource type="Texture2D" uid="uid://c2gkj5bjpl4ls" path="res://assets/title screen frames/2.PNG" id="3_pb2h4"]
+[ext_resource type="Texture2D" uid="uid://k3a4ietyth5n" path="res://assets/title screen frames/3.PNG" id="4_rktxi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1dbw5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f16tm")
+"texture": ExtResource("2_3w3yr")
 }],
 "loop": true,
 "name": &"shovel",
@@ -17,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tfk0f")
+"texture": ExtResource("3_pb2h4")
 }],
 "loop": true,
 "name": &"sigmamode",
@@ -25,7 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8g8xn")
+"texture": ExtResource("4_rktxi")
 }],
 "loop": true,
 "name": &"yeah",
@@ -56,7 +56,7 @@ layout_mode = 2
 position = Vector2(-1, 3)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_1dbw5")
-animation = &"shovel"
+animation = &"yeah"
 
 [node name="Area2D" type="Area2D" parent="CenterContainer/AspectRatioContainer/AnimatedSprite2D"]
 

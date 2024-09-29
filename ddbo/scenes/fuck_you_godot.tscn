@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5j30ortv61jl"]
+[gd_scene load_steps=3 format=3 uid="uid://c5j30ortv61jl"]
 
 [ext_resource type="Texture2D" uid="uid://ltubf57cskfy" path="res://assets/fire/IMG_1701.png" id="1_ejc4f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6knbs"]
+size = Vector2(3, 2)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("1_ejc4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_6knbs")

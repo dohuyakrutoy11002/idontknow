@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	print(loadedscript.hp)
+	#print(loadedscript.hp)
 	#FPS count
 	$Label.set_text("FPS" + str(Engine.get_frames_per_second()))
 	

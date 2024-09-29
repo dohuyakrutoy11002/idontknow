@@ -23,7 +23,7 @@ func _input(event):
 		Engine.max_fps = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if hp <= 0:
 		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	pass

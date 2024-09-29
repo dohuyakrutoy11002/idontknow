@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+@onready var game_controller = get_owner()
+var hp:int = 3:
+	set(value):
+		hp += value
+		if hp <= 0:
+			game_controller.goto_scene('res://scenes/death_screen.tscn')
+
 var SPEED = 1000
 var target_velocity = Vector2.ZERO
 var flip
@@ -11,7 +18,7 @@ var timeout = false
 func _ready():
 	loadedscript.isLinear = false
 	$AnimatedSprite2D.play()
-	var flip = $AnimatedSprite2D.scale.x * -1
+	#var flip = $AnimatedSprite2D.scale.x * -1
 	pass # Replace with function body.
 
 
