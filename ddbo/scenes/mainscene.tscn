@@ -1,11 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://ct8k4bqajepy4"]
+[gd_scene load_steps=21 format=3 uid="uid://ct8k4bqajepy4"]
 
+[ext_resource type="Script" path="res://scenes/mainscene.gd" id="1_ekthl"]
 [ext_resource type="PackedScene" uid="uid://dddm8t81ncm74" path="res://scenes/maincharacter.tscn" id="1_hs4hf"]
 [ext_resource type="Texture2D" uid="uid://bcpu1ag74cqw2" path="res://assets/background/place/IMG_1712_page_0001.jpg" id="1_ndbs6"]
 [ext_resource type="Texture2D" uid="uid://dfu41158hhwt8" path="res://assets/background/place/IMG_1712_page_0002.jpg" id="2_847k3"]
 [ext_resource type="Script" path="res://scripts/maincamera.gd" id="2_qwgt3"]
 [ext_resource type="Texture2D" uid="uid://d2s8v88bcjmlc" path="res://assets/background/place/IMG_1712_page_0003.jpg" id="3_cbha4"]
-[ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="3_rkr5n"]
 [ext_resource type="Texture2D" uid="uid://dncajkfjler8h" path="res://assets/background/grass/3f4ad96c2bccdf15f53280d8e48dbde0_page_0001.png" id="4_4bhnj"]
 [ext_resource type="Texture2D" uid="uid://dkdtf8r4rbkqx" path="res://assets/background/grass/3f4ad96c2bccdf15f53280d8e48dbde0_page_0002.png" id="5_s3uvq"]
 [ext_resource type="PackedScene" uid="uid://jsx6r3m4mpgd" path="res://scenes/UI/UI.tscn" id="6_3u3qd"]
@@ -17,24 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://b8fhs0c61ujto" path="res://assets/background/snow/IMG_1838_page_0005.png" id="11_bv765"]
 [ext_resource type="Texture2D" uid="uid://c3kpyncwn3kgh" path="res://assets/background/snow/IMG_1838_page_0006.png" id="12_51l4a"]
 [ext_resource type="Texture2D" uid="uid://d3ewe78wo2s37" path="res://assets/background/snow/IMG_1838_page_0007.png" id="13_4wb0f"]
-[ext_resource type="Script" path="res://scripts/audiothingmainscene.gd" id="19_njxsa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7aeob"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ndbs6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_847k3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_cbha4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_4bhnj")
@@ -47,6 +32,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"grass",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndbs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_847k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cbha4")
+}],
+"loop": true,
+"name": &"level",
 "speed": 5.0
 }, {
 "frames": [{
@@ -85,20 +84,22 @@ size = Vector2(1239, 69)
 [node name="Node2D" type="Node2D"]
 clip_children = 2
 position = Vector2(-221.74, 19)
+script = ExtResource("1_ekthl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-237, -201)
 sprite_frames = SubResource("SpriteFrames_7aeob")
+animation = &"level"
+frame_progress = 0.919003
 centered = false
-script = ExtResource("3_rkr5n")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_hs4hf")]
+position = Vector2(573.74, 442)
+scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(790.74, 307)
 script = ExtResource("2_qwgt3")
-
-[node name="CharacterBody2D" parent="Camera2D" instance=ExtResource("1_hs4hf")]
-position = Vector2(-217, 135)
-scale = Vector2(3, 3)
 
 [node name="Control" parent="." instance=ExtResource("6_3u3qd")]
 offset_left = 213.74
@@ -132,9 +133,6 @@ shape = SubResource("RectangleShape2D_oat8l")
 position = Vector2(789.74, 673)
 shape = SubResource("RectangleShape2D_oat8l")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-autoplay = true
-script = ExtResource("19_njxsa")
-
+[connection signal="hp_changed" from="CharacterBody2D" to="Control" method="_on_character_body_2d_hp_changed"]
 [connection signal="timeout" from="spawntime" to="Camera2D" method="_on_spawntime_timeout"]
 [connection signal="timeout" from="doorspawn" to="Camera2D" method="_on_doorspawn_timeout"]

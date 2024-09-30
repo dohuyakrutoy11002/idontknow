@@ -1,7 +1,7 @@
 extends Control
 
+@onready var player: CharacterBody2D = $'../CharacterBody2D'
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
@@ -11,10 +11,12 @@ func _process(_delta):
 	#print(loadedscript.hp)
 	#FPS count
 	$Label.set_text("FPS" + str(Engine.get_frames_per_second()))
-	
-	#other ui elements
-	match loadedscript.hp:
+
+
+
+func _on_character_body_2d_hp_changed(hp: Variant) -> void:
+	print(hp)
+	match hp:
 		3: $tylerdurden.play("first")
 		2: $tylerdurden.play("second")
 		1: $tylerdurden.play("thrid")
-	pass

@@ -1,15 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://baye4srvgwt6j"]
+[gd_scene load_steps=3 format=3 uid="uid://baye4srvgwt6j"]
 
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_dd2gk"]
-[ext_resource type="AudioStream" uid="uid://bus4thmywbiol" path="res://assets/music(finnaly)/Swazz Loop 1 (Title Screen).wav" id="1_w50qb"]
 [ext_resource type="PackedScene" uid="uid://csdf3o85bq0el" path="res://scenes/UI/sigmamenu.tscn" id="2_0kphi"]
 
-[node name="GameController" type="Node2D"]
+[node name="GameManager" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_dd2gk")
 
-[node name="GameMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_w50qb")
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = &"Music"
 

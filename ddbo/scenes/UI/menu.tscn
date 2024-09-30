@@ -33,7 +33,6 @@ offset_left = 82.0
 offset_top = 462.0
 offset_right = 240.0
 offset_bottom = 493.0
-disabled = true
 text = "Grass Level"
 
 [node name="snow" type="Button" parent="."]
@@ -42,7 +41,6 @@ offset_left = 272.0
 offset_top = 462.0
 offset_right = 430.0
 offset_bottom = 493.0
-disabled = true
 text = "Snow Level
 "
 
@@ -52,7 +50,6 @@ offset_left = 272.0
 offset_top = 536.0
 offset_right = 430.0
 offset_bottom = 567.0
-disabled = true
 text = "Non-linear
 "
 
@@ -62,7 +59,6 @@ offset_left = 466.0
 offset_top = 462.0
 offset_right = 624.0
 offset_bottom = 493.0
-disabled = true
 text = "Level
 "
 

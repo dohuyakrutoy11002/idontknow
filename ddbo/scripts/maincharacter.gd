@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
-@onready var game_controller = get_owner()
-var hp:int = 3:
+signal hp_changed(hp)
+
+var game_manager
+
+var hp:int:
 	set(value):
-		hp += value
+		hp = value
 		if hp <= 0:
-			game_controller.goto_scene('res://scenes/death_screen.tscn')
+			game_manager.goto_scene('res://scenes/death_screen.tscn')
+		hp_changed.emit(hp)
+	get:
+		return hp
 
 var SPEED = 1000
 var target_velocity = Vector2.ZERO
@@ -16,9 +22,12 @@ var timeout = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if game_manager == null:
+		game_manager = get_tree().get_root().get_node("GameManager")
 	loadedscript.isLinear = false
 	$AnimatedSprite2D.play()
 	#var flip = $AnimatedSprite2D.scale.x * -1
+	hp = 3
 	pass # Replace with function body.
 
 
@@ -59,7 +68,7 @@ func _on_area_2d_area_entered(area):
 		pass
 	else:
 		if !timeout:
-			loadedscript.hp -= 1
+			hp -= 1
 			$dildo.start()
 	pass # Replace with function body.
 
